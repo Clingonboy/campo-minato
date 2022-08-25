@@ -69,7 +69,7 @@ function espandi() {
     quadratini.forEach(cella => {
         cella.forEach(q => {
             q.x = q.x + q.dx;
-            q.y = q.y + q.dy;
+            q.y = q.y + q.dy +5;
         });
     });
 }

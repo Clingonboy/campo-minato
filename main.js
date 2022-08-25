@@ -14,6 +14,7 @@ const posizioneBombe = [];
 const quadratini = [];
 const nq = 5;
 const l = lc / nq;
+const messaggioStato = document.getElementById("status-attivo");
 
 function init() {
     canvas.width = nx * lc;
@@ -33,6 +34,7 @@ function init() {
         const y = e.clientY - rect.top;
         rightClickCell(x,y);   
     });
+    messaggioStato.innerText = 'in gioco';
 }
 
 /**
@@ -51,6 +53,7 @@ function clickCell (x, y) {
     } else if (grid[yCell][xCell].bomb === 1){
         // Se clicca sulla cella con boma perde la partita
         haiPerso(grid);
+        messaggioStato.innerText = 'Hai perso, ha ha ha !!';
     }
 }
 

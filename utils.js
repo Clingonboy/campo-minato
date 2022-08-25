@@ -98,6 +98,7 @@ function controlloSeHaiVinto() {
     }
     if( n === nMine) {
         console.log('Hai vinto');
+        messaggioStato.innerText = 'Hai vinto, sei bravissimo !!';
     } else {
         console.log('Non hai ancora vinto');
     }
