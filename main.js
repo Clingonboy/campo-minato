@@ -15,6 +15,13 @@ const quadratini = [];
 const nq = 5;
 const l = lc / nq;
 const messaggioStato = document.getElementById("status-attivo");
+const btnNuovaPartita = document.getElementById("btnNuovaPartita");
+
+btnNuovaPartita.addEventListener('click', e => {
+    init();
+    stato = 'gioco';
+    console.log("nuovo gioco");
+});
 
 function init() {
     canvas.width = nx * lc;
