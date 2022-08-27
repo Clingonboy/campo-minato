@@ -1,5 +1,5 @@
 // Progetto campominato
-// Ultima modifica 20/08/2022
+// Ultima modifica 27/08/2022
 
 console.log('Pagina Caricata');
 const canvas = document.getElementById("myCanvas");
@@ -42,6 +42,7 @@ function init() {
         rightClickCell(x,y);   
     });
     messaggioStato.innerText = 'in gioco';
+    btnNuovaPartita.classList.remove('schiacciami');
 }
 
 /**
@@ -60,6 +61,7 @@ function clickCell (x, y) {
     } else if (grid[yCell][xCell].bomb === 1){
         // Se clicca sulla cella con boma perde la partita
         haiPerso(grid);
+        btnNuovaPartita.classList.add('schiacciami');
         messaggioStato.innerText = 'Hai perso, ha ha ha !!';
     }
 }

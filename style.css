@@ -1,7 +1,37 @@
+body {
+    font-family: arial;
+}
 canvas {
     background: green;
 }
 
 button {
-    margin-bottom: 1rem;
+    background-color: green;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#info {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#status {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.schiacciami {
+    background-image: linear-gradient(to right, red, blue);
+    background-size: 300%;
+    background-position: left;
+    animation: blinck 1s infinite alternate;
+    
+}
+
+@keyframes blinck {
+    0% {background-position: left}
+    100% {background-position: right}
 }
