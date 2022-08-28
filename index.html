@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
+    <script src="timer.js"></script>
     <script src="utils.js" ></script>
     <script src="gui.js" ></script>
     <title>Campo minato ugenio</title>
 </head>
 <body>
     <h1>Campo fiorito</h1>
-    <div id="menu">
+    <div id="menu" class="menu-grid">
         <button id="btnNuovaPartita" class="schiacciami evidenzia">Nuova Partita</button>
         <button id="btnImpostazioni">Impostazioni</button>
         <div id="info"><span>5 bombe totali</span></div>
+        <div id="timer">
+            <span id="timer-minuti">5</span>
+            <span>:</span>
+            <span id="timer-secondi">00</span>
+        </div>
     </div>
     <canvas id = "myCanvas"></canvas>
     <div id="status">

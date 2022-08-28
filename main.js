@@ -16,6 +16,8 @@ const nq = 5;
 const l = lc / nq;
 const messaggioStato = document.getElementById("status-attivo");
 const btnNuovaPartita = document.getElementById("btnNuovaPartita");
+const timer = new Timer(document.getElementById("timer"));
+const tempoPartita = [5, 0];
 
 btnNuovaPartita.addEventListener('click', e => {
     init();
@@ -24,6 +26,8 @@ btnNuovaPartita.addEventListener('click', e => {
 });
 
 function init() {
+    timer.setTimer(...tempoPartita);
+    timer.status='off';
     canvas.width = nx * lc;
     canvas.height = ny * lc;
     drawGrid();
@@ -58,9 +62,14 @@ function clickCell (x, y) {
     if (grid[yCell][xCell].bomb === 0 & grid[yCell][xCell].color === -1) {
         rivela(xCell, yCell, grid);
         controlloSeHaiVinto();// controllo se hai vinto
+        if(timer.status === 'off') {
+            timer.status = 'on';
+            timer.start();
+        }
     } else if (grid[yCell][xCell].bomb === 1){
         // Se clicca sulla cella con boma perde la partita
         haiPerso(grid);
+        timer.status = 'off';
         btnNuovaPartita.classList.add('schiacciami');
         messaggioStato.innerText = 'Hai perso, ha ha ha !!';
     }
